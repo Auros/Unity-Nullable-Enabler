@@ -7,17 +7,17 @@ using static RuniEngine.Editor.EditorTool;
 
 namespace Rumi.VisualStudio.Nullable.Editor
 {
-    sealed class CsprojSetting : SettingsProvider
+    sealed class CsprojSettingsProvider : SettingsProvider
     {
-        public CsprojSetting(string path, SettingsScope scopes) : base(path, scopes) { }
+        public CsprojSettingsProvider(string path, SettingsScope scopes) : base(path, scopes) { }
 
         static SettingsProvider? instance;
         [SettingsProvider]
-        public static SettingsProvider CreateSettingsProvider() => instance ??= new CsprojSetting("Runi Engine/Csproj", SettingsScope.Project)
+        public static SettingsProvider CreateSettingsProvider() => instance ??= new CsprojSettingsProvider("Runi Engine/Csproj", SettingsScope.Project)
         {
             keywords = new string[]
             {
-                nameof(CsprojSettingAssets.enableSDKStyle), nameof(CsprojSettingAssets.enableNullable)
+                nameof(CsprojSettings.enableSDKStyle), nameof(CsprojSettings.enableNullable)
             }
         };
 
@@ -27,7 +27,7 @@ namespace Rumi.VisualStudio.Nullable.Editor
         SerializedProperty? enableLog;
         public override void OnGUI(string searchContext)
         {
-            serializedObject ??= new SerializedObject(CsprojSettingAssets.instance);
+            serializedObject ??= new SerializedObject(CsprojSettings.instance);
 
             enableSDKStyle ??= serializedObject.FindProperty("_enableSDKStyle");
             enableNullable ??= serializedObject.FindProperty("_enableNullable");

@@ -28,7 +28,7 @@ namespace Rumi.VisualStudio.Nullable.Editor
                 string assetPath = AssetDatabase.GetAssetPath(asset);
                 assetPath = Path.GetDirectoryName(assetPath);
                 assetPath = Path.Combine(assetPath, "csc.rsp");
-                
+
                 if (File.Exists(assetPath))
                 {
                     string cscContent = File.ReadAllText(assetPath).ToLower();
@@ -44,7 +44,7 @@ namespace Rumi.VisualStudio.Nullable.Editor
 
         static string OnGeneratedCSProject(string path, string content)
         {
-            if (CsprojSettingAssets.instance.enableNullable && nullableAssemblyList.Contains(Path.GetFileNameWithoutExtension(path)))
+            if (CsprojSettings.instance.enableNullable && nullableAssemblyList.Contains(Path.GetFileNameWithoutExtension(path)))
             {
                 XDocument doc = XDocument.Parse(content);
                 IEnumerable<XElement>? propertyGroup = doc.Element("Project")?.Elements("PropertyGroup");

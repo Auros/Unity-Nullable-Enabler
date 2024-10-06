@@ -1,8 +1,8 @@
-using System.Reflection;
-using System;
-using System.Linq;
 using HarmonyLib;
 using Microsoft.Unity.VisualStudio.Editor;
+using System;
+using System.Linq;
+using System.Reflection;
 using UnityEditor;
 
 namespace Rumi.VisualStudio.Nullable.Editor
@@ -27,7 +27,7 @@ namespace Rumi.VisualStudio.Nullable.Editor
         static readonly IGenerator sdk = (IGenerator)Activator.CreateInstance(sdkType);
 
         static readonly Harmony harmony = new Harmony("Rumi.VisualStudio.Nullable.Editor");
-        
+
         static bool isPathed = false;
         public static void Patch()
         {
@@ -64,13 +64,13 @@ namespace Rumi.VisualStudio.Nullable.Editor
                 UnityEngine.Debug.LogException(e);
             }
 
-            if (CsprojSettingAssets.instance.enableLog)
+            if (CsprojSettings.instance.enableLog)
                 UnityEngine.Debug.Log($"[{nameof(VisualStudioEditorPackagePatches)}] Patch success!");
         }
 
         static void Post(ref IGenerator __result)
         {
-            if (CsprojSettingAssets.instance.enableSDKStyle)
+            if (CsprojSettings.instance.enableSDKStyle)
                 __result = sdk;
             else
                 __result = legacy;
