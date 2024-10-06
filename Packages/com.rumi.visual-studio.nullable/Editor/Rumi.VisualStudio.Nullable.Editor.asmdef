@@ -1,0 +1,27 @@
+{
+    "name": "Rumi.VisualStudio.Nullable.Editor",
+    "rootNamespace": "Rumi.VisualStudio.Nullable.Editor",
+    "references": [
+        "GUID:b93f844d45cfcc44fa2b0eed5c9ec6bb",
+        "GUID:d19976c8233edf14ba31681d949961c5"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "0Harmony.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.teamdodoco.runiengine",
+            "expression": "",
+            "define": "ENABLE_RUNI_ENGINE"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "com.rumi.visual-studio.nullable",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rumi"
+  },
+  "unity": "2022.3",
+  "displayName": "Visual Studio Nullable Enabler",
+  "description": "",
+  "dependencies": {
+    "com.unity.ide.visualstudio": "2.0.22"
+  },
+  "keywords": [
+    "Visual Studio",
+    "Nullable"
+  ],
+  "license": "MIT",
+  "unityRelease": "0f1"
+}
