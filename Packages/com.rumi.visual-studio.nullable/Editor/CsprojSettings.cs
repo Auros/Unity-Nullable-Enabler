@@ -6,7 +6,7 @@ namespace Rumi.VisualStudio.Nullable.Editor
 {
     public sealed class CsprojSettings : ScriptableObject
     {
-        public const string assetPath = "Assets/Settings" + nameof(CsprojSettings) + ".asset";
+        public const string assetPath = "Assets/Settings/" + nameof(CsprojSettings) + ".asset";
 
         public static CsprojSettings instance
         {
